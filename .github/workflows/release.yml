@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: "24"
           cache: true
-      - run: vp pm publish --provenance --no-git-checks
+      - run: vp pm stage publish --provenance -- --no-git-checks
