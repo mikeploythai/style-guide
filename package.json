@@ -1,0 +1,62 @@
+{
+  "name": "@mikeploythai/style-guide",
+  "version": "0.1.0",
+  "description": "My personal Oxlint, Oxfmt, and TypeScript configurations.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikeploythai/style-guide.git"
+  },
+  "files": [
+    "dist",
+    "tsconfig"
+  ],
+  "type": "module",
+  "exports": {
+    "./oxfmt": "./dist/oxfmt.mjs",
+    "./oxlint": "./dist/oxlint.mjs",
+    "./tsconfig": "./tsconfig/index.json",
+    "./tsconfig/*": "./tsconfig/*.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "check": "vp pack && oxfmt && oxlint --fix",
+    "prepublishOnly": "vp pack"
+  },
+  "dependencies": {
+    "@oxlint/plugins": "^1.94.0",
+    "@shadcn/lint": "^0.2.5",
+    "oxlint-plugin-react-doctor": "^0.9.23",
+    "ultracite": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "oxfmt": "0.79.0",
+    "oxlint": "1.94.0",
+    "tsrs": "7.1.0-beta.tsrs4",
+    "typescript": "~7.0.2",
+    "vite-plus": "1.8.0"
+  },
+  "peerDependencies": {
+    "oxfmt": ">=0.79.0 <1",
+    "oxlint": "^1.94.0"
+  },
+  "peerDependenciesMeta": {
+    "oxfmt": {
+      "optional": true
+    },
+    "oxlint": {
+      "optional": true
+    }
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.23.0",
+      "onFail": "download"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig/index.json",
+  "compilerOptions": {
+    "module": "nodenext",
+    "types": ["node"]
+  },
+  "include": ["src", "oxfmt.config.ts", "oxlint.config.ts", "vite.config.ts"]
+}
