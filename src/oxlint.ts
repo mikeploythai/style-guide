@@ -68,8 +68,10 @@ interface LintOptions {
   tanstack?: boolean;
 }
 
-type LintConfig = OxlintConfig &
-  Required<Pick<OxlintConfig, "jsPlugins" | "rules">>;
+type LintConfig = OxlintConfig & {
+  jsPlugins: NonNullable<OxlintConfig["jsPlugins"]>;
+  rules: NonNullable<OxlintConfig["rules"]>;
+};
 
 const lint = ({ tanstack = false }: LintOptions = {}): LintConfig => ({
   extends: [
