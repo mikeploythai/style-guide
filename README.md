@@ -27,6 +27,18 @@ export default defineConfig(fmt());
 { "extends": "@mikeploythai/style-guide/tsconfig" }
 ```
 
+The preset maps `@/*` to your project's `src/*` through `${configDir}`. The shadcn CLI doesn't expand `${configDir}`, so a project that installs components with it sets the alias itself:
+
+```jsonc
+// tsconfig.json
+{
+  "extends": "@mikeploythai/style-guide/tsconfig",
+  "compilerOptions": {
+    "paths": { "@/*": ["./src/*"] },
+  },
+}
+```
+
 ---
 
 MIT
